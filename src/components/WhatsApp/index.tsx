@@ -9,7 +9,7 @@ const WhatsApp: React.FC = () => {
   };
 
   return (
-    <div className='bg-transparent absolute top-12 right-1 md:top-1 md:right-1 p-4'>
+    <div className='bg-transparent sticky top-1 right-1 md:top-1 md:right-1 p-4'>
       <div
         className='flex justify-center items-center w-12 h-12 bg-green-500 rounded-full cursor-pointer animate-bounce'
         onClick={openWhatsApp}

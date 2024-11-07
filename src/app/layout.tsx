@@ -5,6 +5,7 @@ import Footer from "./Layouts/Main/Footer";
 import ClientThemeProvider from "@/utils/ClientThemeProvider";
 import WhatsApp from "@/components/WhatsApp";
 
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -26,6 +27,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
+  
   return (
     <html lang='en'>
       <body
