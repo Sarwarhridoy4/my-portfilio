@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./Layouts/Main/Navbar";
 import Footer from "./Layouts/Main/Footer";
 import ClientThemeProvider from "@/utils/ClientThemeProvider";
+import WhatsApp from "@/components/WhatsApp";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,10 +29,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${Sacramento.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${Sacramento.variable} antialiased relative`}
       >
         <ClientThemeProvider>
           <Navbar />
+          <WhatsApp />
           {children}
           <Footer />
         </ClientThemeProvider>
