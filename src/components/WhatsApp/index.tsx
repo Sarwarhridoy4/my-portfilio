@@ -9,11 +9,11 @@ const WhatsApp: React.FC = () => {
   };
 
   return (
-    <div className='bg-transparent sticky top-1 right-1 md:top-1 md:right-1 p-4'>
+    <div className='bg-transparent absolute bottom-12 right-1 md:bottom-12 md:right-1 p-4'>
       <div
         className='flex justify-center items-center w-12 h-12 bg-green-500 rounded-full cursor-pointer animate-bounce'
         onClick={openWhatsApp}
-        title='Chat with us on WhatsApp'
+        title='Chat with me on WhatsApp'
       >
         <svg
           className='w-8 h-8 text-white'
