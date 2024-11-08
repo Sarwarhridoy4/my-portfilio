@@ -81,7 +81,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <React.Fragment>
-      <div className='w-full absolute top-0 z-50'>
+      <div className='w-full absolute top-0 z-[1000000000000000]'>
           {banner && <HBanner setBanner={setBanner} />}
         </div>
       <div className='grid grid-cols-1 gap-8 p-8 md:grid-cols-2 lg:grid-cols-2'>
