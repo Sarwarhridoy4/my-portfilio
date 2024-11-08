@@ -5,6 +5,7 @@ import {
 } from "@/utils/Download";
 import Link from "next/link";
 import React, { useEffect, useMemo, useState } from "react";
+import HBanner from "../HadithContainer";
 
 const HeroSection: React.FC = () => {
   const maskStyle = {
@@ -27,11 +28,11 @@ const HeroSection: React.FC = () => {
     []
   );
 
-  const [currentSlug, setCurrentSlug] = useState<string>(slugs[0]); // Initial slug
-  const [displayText, setDisplayText] = useState<string>(""); // Text being typed
-  const [charIndex, setCharIndex] = useState<number>(0); // Current character index
-  const [isDeleting, setIsDeleting] = useState<boolean>(false); // Whether text is being deleted
-
+  const [currentSlug, setCurrentSlug] = useState<string>(slugs[0]);
+  const [displayText, setDisplayText] = useState<string>("");
+  const [charIndex, setCharIndex] = useState<number>(0);
+  const [isDeleting, setIsDeleting] = useState<boolean>(false);
+  const [banner, setBanner] = useState<boolean>(true);
   useEffect(() => {
     const typewriter = setInterval(
       () => {
@@ -79,48 +80,53 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <div className='grid grid-cols-1 gap-8 p-8 md:grid-cols-2 lg:grid-cols-2'>
-      <div className='flex flex-col justify-center space-y-4'>
-        <h1 className='masked-text'>I&apos;m Sarwar Hossain</h1>
-        <p className='dynamic-text'>
-          I&apos;m a <span className='slug'>{displayText}</span> developer
-        </p>
-      </div>
-      <div className='flex justify-center items-center' style={maskStyle} />
-      {/* Buttons to download resume */}
-      <div className='w-full mx-auto'>
-        <div className='flex flex-col md:flex-row gap-3 items-center justify-between my-20'>
-          <div className='w-40'>
-            <select
-              name='role'
-              value={selectedRole}
-              onChange={handleRoleChange}
-              className='w-full p-2 border-2 border-yellow-700 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-transparent dark:text-slate-50 text-slate-950'
+    <React.Fragment>
+      <div className='w-full absolute top-0 z-50'>
+          {banner && <HBanner setBanner={setBanner} />}
+        </div>
+      <div className='grid grid-cols-1 gap-8 p-8 md:grid-cols-2 lg:grid-cols-2'>
+        <div className='flex flex-col justify-center space-y-4'>
+          <h1 className='masked-text'>I&apos;m Sarwar Hossain</h1>
+          <p className='dynamic-text'>
+            I&apos;m a <span className='slug'>{displayText}</span> developer
+          </p>
+        </div>
+        <div className='flex justify-center items-center' style={maskStyle} />
+        {/* Buttons to download resume */}
+        <div className='w-full mx-auto'>
+          <div className='flex flex-col md:flex-row gap-3 items-center justify-between my-20'>
+            <div className='w-40'>
+              <select
+                name='role'
+                value={selectedRole}
+                onChange={handleRoleChange}
+                className='w-full p-2 border-2 border-yellow-700 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-transparent dark:text-slate-50 text-slate-950'
+              >
+                <option value='Select Role' defaultChecked>
+                  Select Role
+                </option>
+                <option value='Full Stack'>Full Stack</option>
+                <option value='Front End'>Front End</option>
+                <option value='Back End'>Back End</option>
+              </select>
+            </div>
+
+            <Link href='/contact'>
+              <button className='w-40 h-10 uppercase border-2 border-yellow-600 text-yellow-600 bg-transparent rounded-md hover:bg-yellow-600 hover:text-white transition duration-300'>
+                contact me
+              </button>
+            </Link>
+
+            <button
+              onClick={() => downloadAppFromGoogleDrive(appDriveLink)}
+              className='w-40 h-10 uppercase border-2 border-yellow-600 text-yellow-600 bg-transparent rounded-md hover:bg-yellow-600 hover:text-white transition duration-300'
             >
-              <option value='Select Role' defaultChecked>
-                Select Role
-              </option>
-              <option value='Full Stack'>Full Stack</option>
-              <option value='Front End'>Front End</option>
-              <option value='Back End'>Back End</option>
-            </select>
-          </div>
-
-          <Link href='/contact'>
-            <button className='w-40 h-10 uppercase border-2 border-yellow-600 text-yellow-600 bg-transparent rounded-md hover:bg-yellow-600 hover:text-white transition duration-300'>
-              contact me
+              get app
             </button>
-          </Link>
-
-          <button
-            onClick={() => downloadAppFromGoogleDrive(appDriveLink)}
-            className='w-40 h-10 uppercase border-2 border-yellow-600 text-yellow-600 bg-transparent rounded-md hover:bg-yellow-600 hover:text-white transition duration-300'
-          >
-            get app
-          </button>
+          </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "About - Sarwar Hossain",
-  description: "Learn more about Sarwar Hossain",
+  title: "Projects - Sarwar Hossain",
+  description: "Explore My Projects🚀",
 };
 
 const Projects: React.FC = () => {
