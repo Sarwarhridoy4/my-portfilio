@@ -1,7 +1,21 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    turbo: {
+      images: {
+        allowRemotePatterns: [
+          {
+            protocol: "https",
+            hostname: "github-readme-streak-stats.herokuapp.com",
+          },
+          {
+            protocol: "https",
+            hostname: "github-readme-stats.vercel.app",
+          },
+        ],
+      },
+    },
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

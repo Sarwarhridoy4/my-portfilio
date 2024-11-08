@@ -2,20 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles/globals.css */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --font-sacramento: 'Sacramento', cursive;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.font-sacramento {
+    font-family: var(--font-sacramento);
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.masked-text {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #e0a500, #f7d200, #fdd700, #cc6d00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-mask 3s infinite linear;
+}
+
+/* Gradient animation for the text */
+@keyframes gradient-mask {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.dynamic-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+    color: #71fc00;
+}
+
+.slug {
+    color: #ff416c;
+    /* Highlight color for the slug */
+    font-style: italic;
+    white-space: nowrap;
+    border-right: 2px solid #ff416c;
+    /* Cursor effect */
+    animation: blink 0.5s step-end infinite;
+    /* Blinking cursor */
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #ff416c;
+    }
+}
+
+
+/* Typing animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 24ch;
+    }
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #333;
+    }
 }

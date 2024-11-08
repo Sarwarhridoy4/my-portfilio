@@ -1,5 +1,5 @@
 {
-  "name": "my-portfilio",
+  "name": "sarwar-hossain",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,18 +9,29 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "animejs": "^3.2.2",
+    "axios": "^1.7.7",
+    "framer-motion": "^11.11.11",
+    "next": "15.0.2",
+    "next-themes": "^0.4.3",
     "react": "19.0.0-rc-02c0e824-20241028",
+    "react-animated-cursor": "^2.11.2",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
-    "next": "15.0.2"
+    "react-dropzone": "^14.3.5",
+    "react-hook-form": "^7.53.1",
+    "react-icons": "^5.3.0",
+    "react-responsive-carousel": "^3.2.23",
+    "react-toastify": "^10.0.6"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/animejs": "^3.1.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.2",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "15.0.2"
+    "typescript": "^5"
   }
 }
