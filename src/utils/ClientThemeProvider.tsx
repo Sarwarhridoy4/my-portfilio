@@ -2,9 +2,12 @@
 import { ThemeProvider } from "next-themes";
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
   ssr: false,
 });
+import "react-toastify/dist/ReactToastify.min.css";
+
 export default function ClientThemeProvider({
   children,
 }: {
@@ -31,6 +34,7 @@ export default function ClientThemeProvider({
           innerScale={0.7}
           outerScale={5}
         />
+        <ToastContainer />
         {children}
       </div>
     </ThemeProvider>
