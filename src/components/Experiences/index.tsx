@@ -20,12 +20,13 @@ const Experiences: React.FC = () => {
           interval={5000}
           showThumbs={false}
           showIndicators={false}
+          showStatus={false}
         >
           {/* Item One */}
           <div className='max-w-md mx-auto py-4 px-8 bg-violet-800 shadow-lg rounded-lg my-20'>
             <div className='w-20 h-20 bg-violet-700 rounded-full flex items-center justify-center align-middle'>
               <Image
-                src='/Experiences/3w.png'
+                src='/assets/3w.png'
                 alt='company_logo_3w'
                 width={80}
                 height={80}
@@ -61,7 +62,7 @@ const Experiences: React.FC = () => {
           <div className='max-w-md mx-auto py-4 px-8 bg-violet-800 shadow-lg rounded-lg my-20'>
             <div className='w-20 h-20 bg-violet-700 rounded-full flex items-center justify-center align-middle'>
               <Image
-                src='/Experiences/GOG.png'
+                src='/assets/gog.png'
                 alt='company_logo_geeks_of_gurukul'
                 width={80}
                 height={80}
