@@ -5,13 +5,19 @@ import anime from "animejs";
 import LoadingAnimation from "../Loading";
 import EachProject from "../EachProject";
 
+export interface Image {
+  public_id: string;
+  url: string;
+  _id: string;
+}
+
 type Project = {
   id: string;
   projectName: string;
   slogan: string;
   LiveLink: string;
   gitHubLink: string;
-  images: string[];
+  images: Image[];
 };
 
 const Projects: React.FC = () => {
@@ -55,7 +61,7 @@ const Projects: React.FC = () => {
           ) : (
             <div className='w-11/12 mx-auto flex items-center justify-center flex-col md:flex-row gap-5 flex-wrap'>
               {projects?.map((project, i) => (
-                <EachProject key={i} project={project} />
+                <EachProject key={i} project={project as Project} />
               ))}
             </div>
           )}

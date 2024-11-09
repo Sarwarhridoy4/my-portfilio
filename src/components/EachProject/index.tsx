@@ -2,13 +2,15 @@
 import React from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import "./EachProject.css";
+import { Image } from "../Projects";
+
 
 interface Project {
   projectName: string;
   slogan: string;
   LiveLink: string;
   gitHubLink: string;
-  images: string[];
+  images: Image[]; 
 }
 
 interface EachProjectProps {
@@ -26,7 +28,7 @@ const EachProject: React.FC<EachProjectProps> = ({ project }) => {
           <div
             className="card-front"
             style={{
-              backgroundImage: `url(${images[0]})`,
+              backgroundImage: `url(${images[0]?.url})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
