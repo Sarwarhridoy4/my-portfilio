@@ -10,6 +10,7 @@ interface FormData {
   span: string;
   location: string;
   file: FileList;
+  link: string;
 }
 
 const AddExperienceContainer: React.FC = () => {
@@ -28,6 +29,7 @@ const AddExperienceContainer: React.FC = () => {
       formData.append("company", data.company);
       formData.append("span", data.span);
       formData.append("location", data.location);
+      formData.append("link", data.link);
       if (data.file && data.file[0]) {
         formData.append("image", data.file[0]);
       }
@@ -125,6 +127,24 @@ const AddExperienceContainer: React.FC = () => {
           {errors.location && (
             <p className='text-red-500 text-sm mt-1'>
               {errors.location.message}
+            </p>
+          )}
+        </div>
+        <div>
+          <label htmlFor='link' className='block text-sm font-medium'>
+            Link
+          </label>
+          <input
+            id='link'
+            type='text'
+            className={`w-full p-2 mt-1 border rounded-md dark:bg-gray-700 ${
+              errors.link ? "border-red-500" : "border-gray-300"
+            }`}
+            {...register("link", { required: "Link is required" })}
+          />
+          {errors.link && (
+            <p className='text-red-500 text-sm mt-1'>
+              {errors.link.message}
             </p>
           )}
         </div>
