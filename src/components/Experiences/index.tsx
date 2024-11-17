@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import axios, { AxiosError } from "axios";
+import Link from "next/link";
 
 interface Experience {
   _id: string;
@@ -12,13 +13,13 @@ interface Experience {
   span: string;
   location: string;
   imageUrl: string;
+  link: string;
 }
 
 const Experiences: React.FC = () => {
   const [experiences, setExperiences] = useState<Experience[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
 
   const fetchExperiences = async () => {
     try {
@@ -103,12 +104,14 @@ const Experiences: React.FC = () => {
                 </p>
               </div>
               <div className='flex justify-end mt-4'>
-                <a
-                  href='#'
+                <Link
+                  href={experience.link}
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className='text-md md:text-xl font-medium text-indigo-300'
                 >
                   Details
-                </a>
+                </Link>
               </div>
             </div>
           ))}
