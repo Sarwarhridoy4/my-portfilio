@@ -33,7 +33,7 @@ const AddExperienceContainer: React.FC = () => {
       }
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_ENDPOINT_PORTFOLIO_LOCAL}/experiences`,
+        `${process.env.NEXT_PUBLIC_ENDPOINT_PORTFOLIO}/experiences`,
         {
           method: "POST",
           body: formData,
