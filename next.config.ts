@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
+    domains: [
       "github-readme-streak-stats.herokuapp.com",
       "github-readme-stats.vercel.app",
       "res.cloudinary.com",
